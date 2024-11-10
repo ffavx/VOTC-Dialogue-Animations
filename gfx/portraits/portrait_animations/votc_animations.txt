@@ -62,6 +62,166 @@
 		##############################################
 		##emotion poses
 
+		##################################################################################
+		#---BOW_GREETING
+		bow_greeting_1 = {
+			animation = { head = "throneRoom_bow1_entry" torso = "throneRoom_bow1_entry" }
+			
+			weight = {
+				base = 0
+				modifier = {
+					add = 100
+					has_global_variable = talk_pose
+					global_var:talk_pose = flag:bow_greeting_1
+					
+				}
+			}	
+		}
+
+		bow_greeting_2 = {
+			animation = { head = "throneRoom_bow2_entry" torso = "throneRoom_bow2_entry" }
+			
+			weight = {
+				base = 0
+				modifier = {
+					add = 100
+					has_global_variable = talk_pose
+					global_var:talk_pose = flag:bow_greeting_2
+					
+				}
+			}	
+		}
+
+		bow_greeting_3 = {
+			animation = { head = "throneRoom_bow3_entry" torso = "throneRoom_bow3_entry" }
+			
+			weight = {
+				base = 0
+				modifier = {
+					add = 100
+					has_global_variable = talk_pose
+					global_var:talk_pose = flag:bow_greeting_3
+					
+				}
+			}	
+		}
+
+		##################################################################################
+		#---CONVERSATION
+		conversation_1 = {
+			animation = { head = "throneRoom_conversation1_entry" torso = "throneRoom_conversation1_entry" }
+			
+			weight = {
+				base = 0
+				modifier = {
+					add = 100
+					has_global_variable = talk_pose
+					global_var:talk_pose = flag:conversation_1
+					
+				}
+			}	
+		}
+
+		conversation_2 = {
+			animation = { head = "throneRoom_conversation2_entry" torso = "throneRoom_conversation2_entry" }
+			
+			weight = {
+				base = 0
+				modifier = {
+					add = 100
+					has_global_variable = talk_pose
+					global_var:talk_pose = flag:conversation_2
+					
+				}
+			}	
+		}
+
+		conversation_3 = {
+			animation = { head = "throneRoom_conversation3_entry" torso = "throneRoom_conversation3_entry" }
+			
+			weight = {
+				base = 0
+				modifier = {
+					add = 100
+					has_global_variable = talk_pose
+					global_var:talk_pose = flag:conversation_3
+					
+				}
+			}	
+		}
+
+		conversation_4 = {
+			animation = { head = "throneRoom_conversation4_entry" torso = "throneRoom_conversation4_entry" }
+			
+			weight = {
+				base = 0
+				modifier = {
+					add = 100
+					has_global_variable = talk_pose
+					global_var:talk_pose = flag:conversation_4
+					
+				}
+			}	
+		}
+
+		##################################################################################
+		#---KNEEL
+		kneel_1 = {
+			animation = { head = "throneRoom_kneel1_entry" torso = "throneRoom_kneel1_entry" }
+			
+			weight = {
+				base = 0
+				modifier = {
+					add = 100
+					has_global_variable = talk_pose
+					global_var:talk_pose = flag:kneel_1
+					
+				}
+			}	
+		}
+
+		kneel_2 = {
+			animation = { head = "throneRoom_kneel2_entry" torso = "throneRoom_kneel2_entry" }
+			
+			weight = {
+				base = 0
+				modifier = {
+					add = 100
+					has_global_variable = talk_pose
+					global_var:talk_pose = flag:kneel_2
+					
+				}
+			}	
+		}
+
+		kneel_3 = {
+			animation = { head = "throneRoom_curtsey1_entry" torso = "throneRoom_curtsey1_entry" }
+			
+			weight = {
+				base = 0
+				modifier = {
+					add = 100
+					has_global_variable = talk_pose
+					global_var:talk_pose = flag:kneel_3
+					
+				}
+			}	
+		}
+
+		positive_greeting = {
+			animation = { head = "emotion_happy_entry" torso = "emotion_happy_entry" }
+			
+			weight = {
+				base = 0
+				modifier = {
+					add = 100
+					has_global_variable = talk_pose
+					global_var:talk_pose = flag:positive_greeting
+					
+				}
+			}	
+		}
+
 		weapon_cheer = {
 			animation = { head = "celebrateOneHanded1_entry" torso = "celebrateOneHanded1_entry" }
 			
