@@ -5,7 +5,7 @@ module.exports = {
         {
             name: "animation",
             type: "string",
-            desc: "Choose most relevant animation for {{aiName}}'s phrase or action. BE CAREFULL! You must choose ONLY from this variants: worry, pain, love, sadness, idle, angry, rage, disgust, disapproving, admiration, ecstasy, boredom, disbelief, fear, proposing_a_toast, raise_the_cups, war_cry, weapon_cheer, happy"
+            desc: "Choose most relevant animation for {{aiName}}'s phrase or action. BE CAREFULL! You must choose ONLY from this variants: conversation, bow_greeting, kneel, warm_greeting, positive_greeting, worry, pain, love, sadness, idle, angry, rage, disgust, disapproving, admiration, ecstasy, boredom, disbelief, fear, proposing_a_toast, raise_the_cups, drink_alcohol, war_cry, weapon_cheer, happy"
         }        
     ],
     description: `Execute always`,
@@ -24,7 +24,127 @@ module.exports = {
      */
     run: (gameData, runGameEffect, args) => {
         const animation = cleanAndLowercase(args[0]);
+        let random_int = 0
+        runGameEffect(`
+            set_global_variable = {
+                name = talk_pose
+                value = flag:weapon_cheer
+            }
+        `);
         switch (animation) {
+            case "conversation":
+                random_int = getRandomInt(4);
+                switch (random_int) {
+                    case 1:
+                        runGameEffect(`
+                            set_global_variable = {
+                                name = talk_pose
+                                value = flag:conversation_1
+                            }
+                        `);
+                        break;
+                    case 2:
+                        runGameEffect(`
+                            set_global_variable = {
+                                name = talk_pose
+                                value = flag:conversation_2
+                            }
+                        `);
+                        break;
+                    case 3:
+                        runGameEffect(`
+                            set_global_variable = {
+                                name = talk_pose
+                                value = flag:conversation_3
+                            }
+                        `);
+                        break;
+                    case 4:
+                        runGameEffect(`
+                            set_global_variable = {
+                                name = talk_pose
+                                value = flag:conversation_4
+                            }
+                        `);
+                        break;
+                }
+                break;
+
+            case "bow_greeting":
+                random_int = getRandomInt(3);
+                switch (random_int) {
+                    case 1:
+                        runGameEffect(`
+                            set_global_variable = {
+                                name = talk_pose
+                                value = flag:bow_greeting_1
+                            }
+                        `);
+                        break;
+                    case 2:
+                        runGameEffect(`
+                            set_global_variable = {
+                                name = talk_pose
+                                value = flag:bow_greeting_2
+                            }
+                        `);
+                        break;
+                    case 3:
+                        runGameEffect(`
+                            set_global_variable = {
+                                name = talk_pose
+                                value = flag:bow_greeting_3
+                            }
+                        `);
+                        break;
+                }
+                break;
+
+            case "kneel":
+                random_int = getRandomInt(3);
+                switch (random_int) {
+                    case 1:
+                        runGameEffect(`
+                            set_global_variable = {
+                                name = talk_pose
+                                value = flag:kneel_1
+                            }
+                        `);
+                        break;
+                    case 2:
+                        runGameEffect(`
+                            set_global_variable = {
+                                name = talk_pose
+                                value = flag:kneel_2
+                            }
+                        `);
+                        break;
+                    case 3:
+                        runGameEffect(`
+                            set_global_variable = {
+                                name = talk_pose
+                                value = flag:kneel_3
+                            }
+                        `);
+                        break;
+                }
+                break;
+            case "warm_greeting":
+                runGameEffect(`
+                    set_global_variable = {
+                        name = talk_pose
+                        value = flag:positive_greeting
+                    }
+                `);
+                break;
+            case "positive_greeting":
+                runGameEffect(`
+                    set_global_variable = {
+                        name = talk_pose
+                        value = flag:positive_greeting
+                    }
+                `);
+                break;
             case "weapon_cheer":
                 runGameEffect(`
                     set_global_variable = {
@@ -38,6 +158,14 @@ module.exports = {
                     set_global_variable = {
                         name = talk_pose
                         value = flag:weapon_cheer
+                    }
+                `);
+                break;
+            case "drink_alcohol":
+                runGameEffect(`
+                    set_global_variable = {
+                        name = talk_pose
+                        value = flag:raise_the_cups
                     }
                 `);
                 break;
@@ -189,12 +317,16 @@ module.exports = {
         }
     },    
 
-    chatMessage: (args) =>{
-        return `Animation ${args[0]}`
+    chatMessage: (animation, random_int) =>{
+        return `Animation ${animation} ${random_int}`
     },
+
     chatMessageClass: "neutral-action-message"
 }
 
 function cleanAndLowercase(text) {
     return text.replace(/[^a-zA-Z0-9_]/g, '').toLowerCase();
 }
+function getRandomInt(n) {
+    return Math.floor(Math.random() * n) + 1;
+  }
