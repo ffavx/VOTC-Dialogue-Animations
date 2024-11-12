@@ -208,6 +208,64 @@
 			}	
 		}
 
+		##################################################################################
+		#---READING
+		reading = {
+			animation = { head = "reading_loop" torso = "reading_loop" }
+
+			portrait_modifier = {
+					animations_props = bp2_reading_book_prop
+				}
+				
+			weight = {
+				base = 0
+				modifier = {
+					add = 100
+					has_global_variable = talk_pose
+					global_var:talk_pose = flag:reading
+					
+				}
+			}	
+		}
+
+		##################################################################################
+		#---BOOK
+		ready_to_write = {
+			animation = { head = "throneRoom_writerIdle1_entry" torso = "throneRoom_writerIdle1_entry" }
+
+			portrait_modifier = {
+					animations_props = ep1_mena_book_big_attachment
+				}
+
+			weight = {
+				base = 0
+				modifier = {
+					add = 100
+					has_global_variable = talk_pose
+					global_var:talk_pose = flag:ready_to_write
+					
+				}
+			}	
+		}
+
+		is_writing = {
+			animation = { head = "writing" torso = "writing" }
+
+			portrait_modifier = {
+					animations_props = fp4_writing_book_prop
+				}
+
+			weight = {
+				base = 0
+				modifier = {
+					add = 100
+					has_global_variable = talk_pose
+					global_var:talk_pose = flag:is_writing
+					
+				}
+			}	
+		}
+
 		positive_greeting = {
 			animation = { head = "emotion_happy_entry" torso = "emotion_happy_entry" }
 			

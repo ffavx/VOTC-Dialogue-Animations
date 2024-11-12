@@ -5,7 +5,7 @@ module.exports = {
         {
             name: "animation",
             type: "string",
-            desc: "Choose most relevant animation for {{aiName}}'s phrase or action. BE CAREFULL! You must choose ONLY from this variants: conversation, bow_greeting, kneel, warm_greeting, positive_greeting, worry, pain, love, sadness, idle, angry, rage, disgust, disapproving, admiration, ecstasy, boredom, disbelief, fear, proposing_a_toast, raise_the_cups, drink_alcohol, war_cry, weapon_cheer, happy"
+            desc: "Choose most relevant animation for {{aiName}}'s phrase or action. BE CAREFULL! You must choose ONLY from this variants: writing_something, ready_to_write_something, read_something, conversation, bow_greeting, kneel, warm_greeting, positive_greeting, worry, pain, love, sadness, idle, angry, rage, disgust, disapproving, admiration, ecstasy, boredom, disbelief, fear, proposing_a_toast, raise_the_cups, drink_alcohol, war_cry, weapon_cheer, happy"
         }        
     ],
     description: `Execute always`,
@@ -128,6 +128,30 @@ module.exports = {
                         `);
                         break;
                 }
+                break;
+            case "writing_something":
+                runGameEffect(`
+                    set_global_variable = {
+                        name = talk_pose
+                        value = flag:is_writing
+                    }
+                `);
+                break;
+            case "ready_to_write_something":
+                runGameEffect(`
+                    set_global_variable = {
+                        name = talk_pose
+                        value = flag:ready_to_write
+                    }
+                `);
+                break;
+            case "read_something":
+                runGameEffect(`
+                    set_global_variable = {
+                        name = talk_pose
+                        value = flag:reading
+                    }
+                `);
                 break;
             case "warm_greeting":
                 runGameEffect(`
