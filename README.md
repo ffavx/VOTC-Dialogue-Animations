@@ -12,6 +12,11 @@ Unlike the standard animations in the main mod, this submod offers more lively a
 6. Disable all standart actions in the Voices of the Court program.
 
 ## Chanelog
+### [0.2.1]
+[*Action link*](https://disk.yandex.ru/d/8Cg31CceTsyeYA)
+- Added reading book animation
+- Added writing book animations
+
 ### [0.2.0]
 [*Action link*](https://disk.yandex.ru/d/MfuZN4bvJFPXkw)
 - Added randomization to similar animations for certain actions
